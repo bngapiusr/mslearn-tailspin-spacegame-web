@@ -47,7 +47,7 @@ steps:
       project: "**/*.csproj"
 
   - task: DotNetCoreCLI@2
-    displayName: "Build the project - Release"
+    displayName: "Publish the project - Release"
     inputs:
       command: "publish"
       projects: "**/*.csproj"
@@ -55,6 +55,6 @@ steps:
       arguments: "--no-build --configuration Release --output $(Build.ArtifactStagingDirectory)/Release"
       zipAfterPublish: true
 
-  - task: PublishBuildArtifacts!1
+  - task: PublishBuildArtifacts@1
     displayName: "Publish Artifact: drop"
     condition: succeeded()
