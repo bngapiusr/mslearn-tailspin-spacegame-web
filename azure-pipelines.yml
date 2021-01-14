@@ -44,7 +44,7 @@ steps:
     inputs:
       command: "build"
       arguments: "--no-restore --configuration Release"
-      project: "**/*.csproj"
+      projects: "**/*.csproj"
 
   - task: DotNetCoreCLI@2
     displayName: "Publish the project - Release"
